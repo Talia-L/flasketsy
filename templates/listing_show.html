@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}Welcome to {% endblock %}
+{% block title %}Listings {% endblock %}
 {% block content %}
     <br /><br />
     <div id="ShowProfile">
@@ -8,8 +8,10 @@
         <p>${{ listing.price }}</p>
         <p>{{ listing.description }}</p>
     </div>
-    <a href="{{ url_for('index') }}">Show All</a>
-    <br />
-    <a href="{{ url_for('listing_edit', listing_id=listing.id) }}">Edit Listing</a>
-    <br /><br />
+    <a href="{{ url_for('index') }}"<button type="show all" class="btn btn-primary">Show All</button></a>
+    <br ><br />
+    <a href="{{ url_for('listing_edit', listing_id=listing.id) }}"<button type="edit listing" class="btn btn-primary">Edit Listing</button></a>
+    <br ><br />
+    <a href="{{ url_for('listing_delete', listing_id=listing.id) }}"<button type="delete listing" class="btn btn-primary">Delete Listing</button></a>
+
 {% endblock %}
